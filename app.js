@@ -24,7 +24,7 @@ const addTodo = (e) => {
     todoDiv.appendChild(trash);
     //creating Todo done
     const done = document.createElement('button');
-    done.innerHTML = '<i class="fas fa-check"></i>'
+    done.innerHTML = '<i class="fa-sharp fa-solid fa-circle-check"></i>'
     done.classList.add('done');
     todoDiv.appendChild(done);
     //appending to List
@@ -42,6 +42,8 @@ const deleteCheck = (e) => {
             removeLocalStorage(item);
     } else if (e.target.classList[0] === 'done') {
         item.classList.toggle('completed');
+        let checkIcon = item.children[2].children[0];
+        checkIcon.classList.toggle('fa-check-active')
     }
 }
 
@@ -50,7 +52,7 @@ const deleteCheck = (e) => {
 const filterTodo = (e) => {
     const selectedFilter = e.target.value;
     const todos = todoList.children;
-    console.log( selectedFilter);
+
 
     for (let i = 0; i< todos.length; i++) {
         switch(selectedFilter) {
@@ -59,7 +61,7 @@ const filterTodo = (e) => {
                 break;
             case 'completed':
                 todos[i].style.display = 'flex';
-                if(todos[i].classList.contains('completed')) {
+         if(todos[i].classList.contains('completed')) {
                     todos[i].style.diplay = 'flex';
                 } else {
                     todos[i].style.display = 'none';
@@ -127,7 +129,7 @@ const getTodos = () => {
         todoDiv.appendChild(trash);
         //creating Todo done
         const done = document.createElement('button');
-        done.innerHTML = '<i class="fas fa-check"></i>'
+        done.innerHTML = '<i class="fa-sharp fa-solid fa-circle-check"></i>'
         done.classList.add('done');
         todoDiv.appendChild(done);
         //appending to List

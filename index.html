@@ -10,8 +10,10 @@
     <title>todo list V-2</title>
 </head>
 <body>
+    <main>
     <header>
-        <h1 class="header">Ali's Todo List</h1>
+        <h1 class="header">Brilliant To-do List</h1>
+        <p class="sub-header">Most important tasks to complete</p>
     </header>
 
     <div class="input-container">
@@ -19,13 +21,19 @@
             <input type="text" class="todo-input">
             <button class="todo-btn"><i class="fa-solid fa-add"></i></button>
         </form>
+    </div>
 
-        <select class="todo-filter">
-            <option value="all">All</option>
-            <option value="completed">Done</option>
-            <option value="uncompleted">Uncompleted</option>
-        </select>
+    <div class="filter-container">
+        <div class="your-task">Your Tasks:</div>
 
+        <div class="select">
+            <select class="todo-filter">
+                <option value="all">All</option>
+                <option value="completed">Done</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
+        </div>
+        
     </div>
 
     <div class="todos-container">
@@ -33,7 +41,7 @@
 
         </ul>
     </div>
-    
+</main>
     <script src="./app.js"></script>
 </body>
 </html>
